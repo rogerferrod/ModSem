@@ -1,0 +1,68 @@
+{
+  "procedures": [
+    {
+      "id": "COD2019/0179",
+      "title": "Ensuring basic road freight and air connectivity: periods of application",
+      "status": "Adopted",
+      "documents": [
+        {
+          "author": "Adina_Vălean",
+          "status": "Proposal",
+          "url": "https://www.europarl.europa.eu/RegData/docs_autres_institutions/commission_europeenne/com/2019/0396/COM_COM(2019)0396_EN.pdf",
+          "data": "04/09/2019"
+        },
+        {
+          "author": "Charles_Michel",
+          "status": "FirstLecture",
+          "url": "http://register.consilium.europa.eu/content/out?lang=EN&typ=SET&i=ADV&RESULTSET=1&DOC_ID=[%n4]%2F19&DOC_LANCD=EN&ROWSPP=25&NRROWS=500&ORDERBY=DOC_DATE+DESC",
+          "data": "18/10/2019"
+        },
+        {
+          "author": "Karima_DELLI",
+          "status": "FirstLecture",
+          "url": "https://www.europarl.europa.eu/doceo/document/TA-9-2019-0037_EN.html",
+          "data": "22/10/2019"
+        }
+      ]
+    },
+    {
+      "id": "BUD2019/2213",
+      "title": "Guidelines for the 2021 budget - Section III ",
+      "status": "Proposal",
+      "documents": [
+      ]
+    },
+    {
+      "id": "CNS2019/0807",
+      "title": "Agreement on cooperation between Eurojust and Serbia",
+      "status": "FirstLecture",
+      "documents": [
+        {
+          "author": "Charles_Michel",
+          "status": "FirstLecture",
+          "url": "http://register.consilium.europa.eu/content/out?lang=EN&typ=SET&i=ADV&RESULTSET=1&DOC_ID=10334%2F19&DOC_LANCD=EN&ROWSPP=25&NRROWS=500&ORDERBY=DOC_DATE+DESC",
+          "data": "03/07/2019"
+        },
+        {
+          "author": "Juan Fernando_LÓPEZ AGUILAR",
+          "status": "FirstLecture",
+          "url": "https://www.europarl.europa.eu/doceo/document/TA-9-2019-0023_EN.html",
+          "data": "04/09/2019"
+        }
+      ]
+    },
+    {
+      "id": "COD2020/0006",
+      "title": "Just Transition Fund ",
+      "status": "Proposal",
+      "documents": [
+        {
+          "author": "Frans_Timmermans",
+          "status": "Proposal",
+          "url": "https://www.europarl.europa.eu/RegData/docs_autres_institutions/commission_europeenne/com/2020/0022/COM_COM(2020)0022_EN.pdf",
+          "data": "14/01/2020"
+        }
+      ]
+    }
+  ]
+}

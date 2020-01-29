@@ -1,0 +1,440 @@
+{
+  "commission": [
+    {
+      "firstname": "Ursula",
+      "lastname": "von der Leyen",
+      "country": "Germany",
+      "portfolio": "President of the Commission",
+      "roles": [
+        [
+          "Secretariat-General",
+          "Secretariat-General"
+        ],
+        [
+          "Legal Service",
+          "Legal Service"
+        ],
+        [
+          "COMM",
+          "DG Communication"
+        ],
+        [
+          "EPSC",
+          "European Political Strategy Centre"
+        ]
+      ]
+    },
+    {
+      "firstname": "Frans",
+      "lastname": "Timmermans",
+      "country": "Netherlands",
+      "portfolio": "The European Green Deal",
+      "roles": [
+        [
+          "Executive Vice-President",
+          "Secretariat-General for the Executive Vice-President coordination role"
+        ],
+        [
+          "DG CLIMA",
+          "DG Climate Action"
+        ]
+      ]
+    },
+    {
+      "firstname": "Margrethe",
+      "lastname": "Vestager",
+      "country": "Denmark",
+      "portfolio": "A Europe fit for the Digital Age",
+      "roles": [
+        [
+          "Executive Vice-President",
+          "Secretariat-General for the Executive Vice-President coordination role"
+        ],
+        [
+          "DG COMP",
+          "DG Competition"
+        ]
+      ]
+    },
+    {
+      "firstname": "Valdis",
+      "lastname": "Dombrovskis",
+      "country": "Latvia",
+      "portfolio": "An Economy that Works for People",
+      "roles": [
+        [
+          "Executive Vice-President",
+          "Secretariat-General for the Executive Vice-President coordination role"
+        ],
+        [
+          "DG FISMA",
+          "DG Financial Stability, Financial Services and Capital Markets Union"
+        ]
+      ]
+    },
+    {
+      "firstname": "Josep",
+      "lastname": "Borrell",
+      "country": "Spain",
+      "portfolio": "High Representative of the Union for Foreign Affairs and Security Policy",
+      "roles": [
+        [
+          "Vice-President",
+          "Secretariat-General for the Vice-President coordination role"
+        ],
+        [
+          "EEAS",
+          "European External Action Service"
+        ],
+        [
+          "FPI",
+          "Service for Foreign Policy Instruments"
+        ]
+      ]
+    },
+    {
+      "firstname": "Maroš",
+      "lastname": "Šefčovič",
+      "country": "Slovakia",
+      "portfolio": "Interinstitutional Relations and Foresight",
+      "roles": [
+        [
+          "Vice-President",
+          "Secretariat-General for the Vice-President coordination role"
+        ],
+        [
+          "JRC",
+          "Joint Research Centre"
+        ]
+      ]
+    },
+    {
+      "firstname": "Věra",
+      "lastname": "Jourová",
+      "country": "Czechia",
+      "portfolio": "Values and Transparency",
+      "roles": [
+        [
+          "Vice-President",
+          "Secretariat-General for the Vice-President coordination role"
+        ]
+      ]
+    },
+    {
+      "firstname": "Dubravka",
+      "lastname": "Šuica",
+      "country": "Croatia",
+      "portfolio": "Democracy and Demography",
+      "roles": [
+        [
+          "Vice-President",
+          "Secretariat-General for the Vice-President coordination role"
+        ],
+        [
+          "DG Communication",
+          "DG Communication for the Vice-President coordination role"
+        ]
+      ]
+    },
+    {
+      "firstname": "Margaritis",
+      "lastname": "Schinas",
+      "country": "Greece",
+      "portfolio": "Protecting our European Way of Life",
+      "roles": [
+        [
+          "Vice-President",
+          "Secretariat-General for the Vice-President coordination role"
+        ]
+      ]
+    },
+    {
+      "firstname": "Johannes",
+      "lastname": "Hahn",
+      "country": "Austria",
+      "portfolio": "Budget and Administration",
+      "roles": [
+        [
+          "DB BUDG",
+          "DG Budget"
+        ],
+        [
+          "DG HR",
+          "DG Human Resources and Security"
+        ],
+        [
+          "DIGIT",
+          "DG Informatics"
+        ],
+        [
+          "DGT",
+          "DG Translation"
+        ],
+        [
+          "SCIC",
+          "DG Interpretation"
+        ],
+        [
+          "PMO",
+          "Office for the Administration and Payment of Individual Entitlements"
+        ],
+        [
+          "OIB",
+          "Office Infrastructure and Logistics in Brussels"
+        ],
+        [
+          "OIL",
+          "Office Infrastructure and Logistics in Luxembourg"
+        ],
+        [
+          "OP",
+          "The Publications Office of the European Union"
+        ],
+        [
+          "OLAF",
+          "European Anti-Fraud Office"
+        ]
+      ]
+    },
+    {
+      "firstname": "Phil",
+      "lastname": "Hogan",
+      "country": "Ireland",
+      "portfolio": "Trade",
+      "roles": [
+        [
+          "TRADE",
+          "DG Trade"
+        ]
+      ]
+    },
+    {
+      "firstname": "Mariya",
+      "lastname": "Gabriel",
+      "country": "Bulgaria",
+      "portfolio": "Innovation and Youth",
+      "roles": [
+        [
+          "DG RTD",
+          "DG Research and Innovation"
+        ],
+        [
+          "EAC",
+          "DG Education, Youth, Sport and Culture"
+        ],
+        [
+          "JRC",
+          "Joint Research Centre"
+        ]
+      ]
+    },
+    {
+      "firstname": "Nicolas",
+      "lastname": "Schmit",
+      "country": "Luxembourg",
+      "portfolio": "Jobs",
+      "roles": [
+        [
+          "DG EMPL",
+          "DG Employment, Social Affairs and Inclusion"
+        ]
+      ]
+    },
+    {
+      "firstname": "Paolo",
+      "lastname": "Gentiloni",
+      "country": "Italy",
+      "portfolio": "Economy",
+      "roles": [
+        [
+          "DG ECFIN",
+          "DG Economic and Financial Affairs"
+        ],
+        [
+          "DG TAXUD",
+          "DG Taxation and Customs Union"
+        ],
+        [
+          "ESTAT",
+          "Eurostat"
+        ]
+      ]
+    },
+    {
+      "firstname": "Janusz",
+      "lastname": "Wojciechowski",
+      "country": "Poland",
+      "portfolio": "Agriculture",
+      "roles": [
+        [
+          "DG AGRI",
+          "DG Agriculture and Rural Development"
+        ]
+      ]
+    },
+    {
+      "firstname": "Thierry",
+      "lastname": "Breton",
+      "country": "France",
+      "portfolio": "Internal Market",
+      "roles": [
+        [
+          "DG CNECT",
+          "DG Communications Networks, Content and Technology"
+        ],
+        [
+          "DG GROW",
+          "DG Internal Market, Industry, Entrepreneurship and SMEs"
+        ],
+        [
+          "DG Space",
+          "DG for Defence Industry and Space"
+        ]
+      ]
+    },
+    {
+      "firstname": "Stella",
+      "lastname": "Kyriakides",
+      "country": "Cyprus",
+      "portfolio": "Health",
+      "roles": [
+        [
+          "DG SANTE",
+          "DG Health and Food Safety"
+        ]
+      ]
+    },
+    {
+      "firstname": "Didier",
+      "lastname": "Reynders",
+      "country": "Belgium",
+      "portfolio": "Justice",
+      "roles": [
+        [
+          "DG JUST",
+          "DG Justice and Consumers"
+        ],
+        [
+          "IAS",
+          "Internal Audit Service"
+        ]
+      ]
+    },
+    {
+      "firstname": "Helena",
+      "lastname": "Dalli",
+      "country": "Malta",
+      "portfolio": "Equality",
+      "roles": [
+        [
+          "Task Force for Equality",
+          "Task Force for Equality"
+        ],
+        [
+          "DG JUST",
+          "DG Justice and Consumers"
+        ]
+      ]
+    },
+    {
+      "firstname": "Ylva",
+      "lastname": "Johansson",
+      "country": "Sweden",
+      "portfolio": "Home Affairs",
+      "roles": [
+        [
+          "DG HOME",
+          "DG Migration and Home Affairs"
+        ]
+      ]
+    },
+    {
+      "firstname": "Janez",
+      "lastname": "Lenarčič",
+      "country": "Slovenia",
+      "portfolio": "Crisis Management",
+      "roles": [
+        [
+          "ECHO",
+          "DG European Civil Protection and Humanitarian Aid Operations"
+        ]
+      ]
+    },
+    {
+      "firstname": "Adina",
+      "lastname": "Vălean",
+      "country": "Romania",
+      "portfolio": "Transport",
+      "roles": [
+        [
+          "DG MOVE",
+          "DG Mobility and Transport"
+        ]
+      ]
+    },
+    {
+      "firstname": "Olivér",
+      "lastname": "Várhelyi",
+      "country": "Hungary",
+      "portfolio": "Neighbourhood and Enlargement",
+      "roles": [
+        [
+          "DG NEAR",
+          "DG Neighbourhood and Enlargement Negotiations"
+        ]
+      ]
+    },
+    {
+      "firstname": "Jutta",
+      "lastname": "Urpilainen",
+      "country": "Finland",
+      "portfolio": "International Partnerships",
+      "roles": [
+        [
+          "DG DEVCO",
+          "DG International Cooperation and Development"
+        ]
+      ]
+    },
+    {
+      "firstname": "Kadri",
+      "lastname": "Simson",
+      "country": "Estonia",
+      "portfolio": "Energy",
+      "roles": [
+        [
+          "DG ENER",
+          "DG Energy"
+        ]
+      ]
+    },
+    {
+      "firstname": "Virginijus",
+      "lastname": "Sinkevičius",
+      "country": "Lithuania",
+      "portfolio": "Environment and Oceans",
+      "roles": [
+        [
+          "DG ENV",
+          "DG Environment"
+        ],
+        [
+          "DG MARE",
+          "DG Maritime Affairs and Fisheries"
+        ]
+      ]
+    },
+    {
+      "firstname": "Elisa",
+      "lastname": "Ferreira",
+      "country": "Portugal",
+      "portfolio": "Cohesion and Reforms",
+      "roles": [
+        [
+          "Cohesion and Reforms",
+          "Cohesion and Reforms"
+        ]
+      ]
+    }
+  ]
+}

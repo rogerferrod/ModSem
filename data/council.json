@@ -1,0 +1,193 @@
+{
+  "council": [
+    {
+      "firstname": "Sophie",
+      "lastname": "Wilmès",
+      "country": "Belgium",
+      "nationalparty": "Mouvement Réformateur",
+      "dbpedia": ""
+    },
+    {
+      "firstname": "Boyko",
+      "lastname": "Borisov",
+      "country": "Bulgaria",
+      "nationalparty": "Citizens for European Development of Bulgaria",
+      "dbpedia": "http://dbpedia.org/resource/Boyko_Borissov"
+    },
+    {
+      "firstname": "Andrej",
+      "lastname": "Babiš",
+      "country": "Czechia",
+      "nationalparty": "ANO 2011",
+      "dbpedia": "http://dbpedia.org/resource/Andrej_Babi%C5%A1"
+    },
+    {
+      "firstname": "Mette",
+      "lastname": "Frederiksen",
+      "country": "Denmark",
+      "nationalparty": "Socialdemokratiet",
+      "dbpedia": ""
+    },
+    {
+      "firstname": "Angela",
+      "lastname": "Merkel",
+      "country": "Germany",
+      "nationalparty": "Christlich Demokratische Union Deutschlands",
+      "dbpedia": "http://dbpedia.org/resource/Angela_Merkel"
+    },
+    {
+      "firstname": "Jüri",
+      "lastname": "Ratas",
+      "country": "Estonia",
+      "nationalparty": "Eesti Keskerakond",
+      "dbpedia": ""
+    },
+    {
+      "firstname": "Leo",
+      "lastname": "Varadkar",
+      "country": "Ireland",
+      "nationalparty": "Fine Gael Party",
+      "dbpedia": ""
+    },
+    {
+      "firstname": "Kyriakos",
+      "lastname": "Mitsotakis",
+      "country": "Greece",
+      "nationalparty": "Nea Demokratia",
+      "dbpedia": "http://dbpedia.org/resource/Kyriakos_Mitsotakis"
+    },
+    {
+      "firstname": "Pedro",
+      "lastname": "Sánchez",
+      "country": "Spain",
+      "nationalparty": "Partido Socialista Obrero Español",
+      "dbpedia": "http://dbpedia.org/resource/Pedro_A._Sanchez"
+    },
+    {
+      "firstname": "Emmanuel",
+      "lastname": "Macron",
+      "country": "France",
+      "nationalparty": "La République en marche",
+      "dbpedia": "http://dbpedia.org/resource/Emmanuel_Macron"
+    },
+    {
+      "firstname": "Andrej",
+      "lastname": "Plenković",
+      "country": "Croatia",
+      "nationalparty": "Hrvatska demokratska zajednica",
+      "dbpedia": ""
+    },
+    {
+      "firstname": "Giuseppe",
+      "lastname": "Conte",
+      "country": "Italy",
+      "nationalparty": "",
+      "dbpedia": ""
+    },
+    {
+      "firstname": "Nicos",
+      "lastname": "Anastasiades",
+      "country": "Cyprus",
+      "nationalparty": "Democratic Rally",
+      "dbpedia": "http://dbpedia.org/resource/Nicos_Anastasiades"
+    },
+    {
+      "firstname": "Krišjānis",
+      "lastname": "Kariņš",
+      "country": "Latvia",
+      "nationalparty": "Partija \"VIENOTĪBA\"",
+      "dbpedia": ""
+    },
+    {
+      "firstname": "Gitanas",
+      "lastname": "Nausėda",
+      "country": "Lithuania",
+      "nationalparty": "",
+      "dbpedia": ""
+    },
+    {
+      "firstname": "Xavier",
+      "lastname": "Bettel",
+      "country": "Luxembourg",
+      "nationalparty": "Parti démocratique",
+      "dbpedia": ""
+    },
+    {
+      "firstname": "Viktor",
+      "lastname": "Orbán",
+      "country": "Hungary",
+      "nationalparty": "Fidesz-Magyar Polgári Szövetség-Kereszténydemokrata Néppárt",
+      "dbpedia": "http://dbpedia.org/resource/Viktor_Orb%C3%A1n"
+    },
+    {
+      "firstname": "Robert",
+      "lastname": "Abela",
+      "country": "Malta",
+      "nationalparty": "Partit Laburista",
+      "dbpedia": ""
+    },
+    {
+      "firstname": "Mark",
+      "lastname": "Rutte",
+      "country": "Netherlands",
+      "nationalparty": "Volkspartij voor Vrijheid en Democratie",
+      "dbpedia": "http://dbpedia.org/resource/Mark_Rutte"
+    },
+    {
+      "firstname": "Sebastian",
+      "lastname": "Kurz",
+      "country": "Austria",
+      "nationalparty": "Österreichische Volkspartei",
+      "dbpedia": ""
+    },
+    {
+      "firstname": "Mateusz",
+      "lastname": "Morawiecki",
+      "country": "Poland",
+      "nationalparty": "Prawo i Sprawiedliwość",
+      "dbpedia": ""
+    },
+    {
+      "firstname": "António",
+      "lastname": "Costa",
+      "country": "Portugal",
+      "nationalparty": "Partido Socialista",
+      "dbpedia": ""
+    },
+    {
+      "firstname": "Klaus",
+      "lastname": "Iohannis",
+      "country": "Romania",
+      "nationalparty": "",
+      "dbpedia": ""
+    },
+    {
+      "firstname": "Marjan",
+      "lastname": "Šarec",
+      "country": "Slovenia",
+      "nationalparty": "Lista Marjana Šarca",
+      "dbpedia": ""
+    },
+    {
+      "firstname": "Peter",
+      "lastname": "Pellegrini",
+      "country": "Slovakia",
+      "nationalparty": "SMER-Sociálna demokracia",
+      "dbpedia": ""
+    },
+    {
+      "firstname": "Sanna",
+      "lastname": "Marin",
+      "country": "Finland",
+      "nationalparty": "Suomen Sosialidemokraattinen Puolue/Finlands Socialdemokratiska Parti",
+      "dbpedia": ""
+    },
+    {
+      "firstname": "Stefan",
+      "lastname": "Löfven",
+      "country": "Sweden",
+      "nationalparty": "Arbetarepartiet- Socialdemokraterna",
+      "dbpedia": ""
+    }
+  ]
+}

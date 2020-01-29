@@ -1,0 +1,459 @@
+@prefix rr:    <http://www.w3.org/ns/r2rml#> .
+@prefix eu:    <http://www.semanticweb.org/european_union#> .
+@prefix :      <http://www.semanticweb.org/european_union#> .
+@prefix obda:  <https://w3id.org/obda/vocabulary#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix xml:   <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix vann:  <http://purl.org/vocab/vann/> .
+
+<urn:MAPID-COUNCIL_1>
+        a                      rr:TriplesMap ;
+        rr:logicalTable        [ a            rr:R2RMLView ;
+                                 rr:sqlQuery  "select * from \"public\".\"council\""
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:TermMap , rr:ObjectMap ;
+                                                 rr:template  "http://www.semanticweb.org/european_union#COUNTRY_{country}" ;
+                                                 rr:termType  rr:IRI
+                                               ] ;
+                                 rr:predicate  eu:cameFrom
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:TermMap , rr:ObjectMap ;
+                                                 rr:template  "http://www.semanticweb.org/european_union#PARTY_{party}" ;
+                                                 rr:termType  rr:IRI
+                                               ] ;
+                                 rr:predicate  eu:belongsToNationalParty
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:TermMap , rr:ObjectMap ;
+                                                 rr:template  "http://www.semanticweb.org/european_union#COUNTRY_{country}" ;
+                                                 rr:termType  rr:IRI
+                                               ] ;
+                                 rr:predicate  eu:headOfState
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:TermMap , rr:ObjectMap ;
+                                                 rr:column    "dbpedia" ;
+                                                 rr:datatype  xsd:string ;
+                                                 rr:termType  rr:Literal
+                                               ] ;
+                                 rr:predicate  owl:sameAs
+                               ] ;
+        rr:subjectMap          [ a            rr:TermMap , rr:SubjectMap ;
+                                 rr:class     eu:NationalPrimeMinister ;
+                                 rr:template  "http://www.semanticweb.org/european_union#PERSON_{firstname}_{lastname}" ;
+                                 rr:termType  rr:IRI
+                               ] .
+
+<urn:MAPID-NATIONAL_PARTY_1>
+        a                      rr:TriplesMap ;
+        rr:logicalTable        [ a            rr:R2RMLView ;
+                                 rr:sqlQuery  "select distinct \"nationalparty\" as party, \"country\" from \"public\".meps"
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:ObjectMap , rr:TermMap ;
+                                                 rr:template  "http://www.semanticweb.org/european_union#COUNTRY_{country}" ;
+                                                 rr:termType  rr:IRI
+                                               ] ;
+                                 rr:predicate  eu:nationalPartyOf
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:TermMap , rr:ObjectMap ;
+                                                 rr:column    "party" ;
+                                                 rr:datatype  xsd:string ;
+                                                 rr:termType  rr:Literal
+                                               ] ;
+                                 rr:predicate  rdfs:label
+                               ] ;
+        rr:subjectMap          [ a            rr:SubjectMap , rr:TermMap ;
+                                 rr:class     eu:NationalPoliticalParty ;
+                                 rr:template  "http://www.semanticweb.org/european_union#PARTY_{party}" ;
+                                 rr:termType  rr:IRI
+                               ] .
+
+<urn:MAPID-COMMITTEE_1>
+        a                      rr:TriplesMap ;
+        rr:logicalTable        [ a            rr:R2RMLView ;
+                                 rr:sqlQuery  "select distinct \"committee\", \"label\" from \"public\".\"committee\""
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:TermMap , rr:ObjectMap ;
+                                                 rr:column    "label" ;
+                                                 rr:language  "en" ;
+                                                 rr:termType  rr:Literal
+                                               ] ;
+                                 rr:predicate  rdfs:label
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:TermMap , rr:ObjectMap ;
+                                                 rr:column    "committee" ;
+                                                 rr:datatype  xsd:string ;
+                                                 rr:termType  rr:Literal
+                                               ] ;
+                                 rr:predicate  skos:altLabel
+                               ] ;
+        rr:subjectMap          [ a            rr:TermMap , rr:SubjectMap ;
+                                 rr:class     eu:PermanentCommittee ;
+                                 rr:template  "http://www.semanticweb.org/european_union#COMM_{committee}" ;
+                                 rr:termType  rr:IRI
+                               ] .
+
+<urn:MAPID-PARTY_AFFILIATION>
+        a                      rr:TriplesMap ;
+        rr:logicalTable        [ a            rr:R2RMLView ;
+                                 rr:sqlQuery  "select distinct \"nationalparty\", \"politicalgroup\" from \"public\".meps"
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:ObjectMap , rr:TermMap ;
+                                                 rr:template  "http://www.semanticweb.org/european_union#GROUP_{politicalgroup}" ;
+                                                 rr:termType  rr:IRI
+                                               ] ;
+                                 rr:predicate  eu:affiliatedToEuropeanParty
+                               ] ;
+        rr:subjectMap          [ a            rr:TermMap , rr:SubjectMap ;
+                                 rr:template  "http://www.semanticweb.org/european_union#PARTY_{nationalparty}" ;
+                                 rr:termType  rr:IRI
+                               ] .
+
+<urn:MAPID-COMMISSIONER_ROLES>
+        a                      rr:TriplesMap ;
+        rr:logicalTable        [ a            rr:R2RMLView ;
+                                 rr:sqlQuery  "select \"firstname\", \"lastname\", \"role\" from \"public\".\"commission\" join \"public\".\"roles\" on \"lastname\" = \"commissioner\""
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:TermMap , rr:ObjectMap ;
+                                                 rr:template  "http://www.semanticweb.org/european_union#ROLE_{role}" ;
+                                                 rr:termType  rr:IRI
+                                               ] ;
+                                 rr:predicate  eu:hasCommissionRole
+                               ] ;
+        rr:subjectMap          [ a            rr:SubjectMap , rr:TermMap ;
+                                 rr:template  "http://www.semanticweb.org/european_union#PERSON_{firstname}_{lastname}" ;
+                                 rr:termType  rr:IRI
+                               ] .
+
+<urn:MAPID-COMMISSIONER_1>
+        a                      rr:TriplesMap ;
+        rr:logicalTable        [ a            rr:R2RMLView ;
+                                 rr:sqlQuery  "select * from \"public\".\"commission\""
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:ObjectMap , rr:TermMap ;
+                                                 rr:column    "firstname" ;
+                                                 rr:datatype  xsd:string ;
+                                                 rr:termType  rr:Literal
+                                               ] ;
+                                 rr:predicate  <http://xmlns.com/foaf/0.1/name>
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:TermMap , rr:ObjectMap ;
+                                                 rr:column    "homepage" ;
+                                                 rr:datatype  xsd:string ;
+                                                 rr:termType  rr:Literal
+                                               ] ;
+                                 rr:predicate  eu:homepage
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:TermMap , rr:ObjectMap ;
+                                                 rr:template  "http://www.semanticweb.org/european_union#COUNTRY_{country}" ;
+                                                 rr:termType  rr:IRI
+                                               ] ;
+                                 rr:predicate  eu:cameFrom
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:TermMap , rr:ObjectMap ;
+                                                 rr:column    "portfolio" ;
+                                                 rr:datatype  xsd:string ;
+                                                 rr:termType  rr:Literal
+                                               ] ;
+                                 rr:predicate  eu:portfolio
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:TermMap , rr:ObjectMap ;
+                                                 rr:column    "lastname" ;
+                                                 rr:datatype  xsd:string ;
+                                                 rr:termType  rr:Literal
+                                               ] ;
+                                 rr:predicate  <http://xmlns.com/foaf/0.1/surname>
+                               ] ;
+        rr:subjectMap          [ a            rr:SubjectMap , rr:TermMap ;
+                                 rr:class     eu:Commissioner ;
+                                 rr:template  "http://www.semanticweb.org/european_union#PERSON_{firstname}_{lastname}" ;
+                                 rr:termType  rr:IRI
+                               ] .
+
+<urn:MAPID-MEP_1>  a           rr:TriplesMap ;
+        rr:logicalTable        [ a            rr:R2RMLView ;
+                                 rr:sqlQuery  "select * from \"public\".meps"
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:TermMap , rr:ObjectMap ;
+                                                 rr:template  "http://www.semanticweb.org/european_union#COUNTRY_{country}" ;
+                                                 rr:termType  rr:IRI
+                                               ] ;
+                                 rr:predicate  eu:cameFrom
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:TermMap , rr:ObjectMap ;
+                                                 rr:template  "http://www.semanticweb.org/european_union#PARTY_{nationalparty}" ;
+                                                 rr:termType  rr:IRI
+                                               ] ;
+                                 rr:predicate  eu:belongsToNationalParty
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:ObjectMap , rr:TermMap ;
+                                                 rr:column    "urlhomepage" ;
+                                                 rr:datatype  xsd:string ;
+                                                 rr:termType  rr:Literal
+                                               ] ;
+                                 rr:predicate  eu:homepage
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:TermMap , rr:ObjectMap ;
+                                                 rr:column    "urlphoto" ;
+                                                 rr:datatype  xsd:string ;
+                                                 rr:termType  rr:Literal
+                                               ] ;
+                                 rr:predicate  eu:photo
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:TermMap , rr:ObjectMap ;
+                                                 rr:column    "parliamentary_role" ;
+                                                 rr:datatype  xsd:string ;
+                                                 rr:termType  rr:Literal
+                                               ] ;
+                                 rr:predicate  eu:parliamentaryRole
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:TermMap , rr:ObjectMap ;
+                                                 rr:column    "lastname" ;
+                                                 rr:datatype  xsd:string ;
+                                                 rr:termType  rr:Literal
+                                               ] ;
+                                 rr:predicate  <http://xmlns.com/foaf/0.1/surname>
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:TermMap , rr:ObjectMap ;
+                                                 rr:column    "firstname" ;
+                                                 rr:datatype  xsd:string ;
+                                                 rr:termType  rr:Literal
+                                               ] ;
+                                 rr:predicate  <http://xmlns.com/foaf/0.1/name>
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:ObjectMap , rr:TermMap ;
+                                                 rr:template  "http://www.semanticweb.org/european_union#GROUP_{politicalgroup}" ;
+                                                 rr:termType  rr:IRI
+                                               ] ;
+                                 rr:predicate  eu:belongsToGroup
+                               ] ;
+        rr:subjectMap          [ a            rr:TermMap , rr:SubjectMap ;
+                                 rr:class     eu:MemberEuropeanParliament ;
+                                 rr:template  "http://www.semanticweb.org/european_union#PERSON_{firstname}_{lastname}" ;
+                                 rr:termType  rr:IRI
+                               ] .
+
+<urn:MAPID-PROCEDURE_DOCUMENT>
+        a                      rr:TriplesMap ;
+        rr:logicalTable        [ a            rr:R2RMLView ;
+                                 rr:sqlQuery  "select \"id\", \"procedure\" from \"public\".\"document\""
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:TermMap , rr:ObjectMap ;
+                                                 rr:template  "http://www.semanticweb.org/european_union#DOC_{id}" ;
+                                                 rr:termType  rr:IRI
+                                               ] ;
+                                 rr:predicate  eu:hasDocument
+                               ] ;
+        rr:subjectMap          [ a            rr:SubjectMap , rr:TermMap ;
+                                 rr:template  "http://www.semanticweb.org/european_union#PROC_{procedure}" ;
+                                 rr:termType  rr:IRI
+                               ] .
+
+<urn:MAPID-COUNTRY_1>
+        a                      rr:TriplesMap ;
+        rr:logicalTable        [ a            rr:R2RMLView ;
+                                 rr:sqlQuery  "select distinct \"country\" from \"public\".meps"
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:TermMap , rr:ObjectMap ;
+                                                 rr:column    "country" ;
+                                                 rr:language  "en" ;
+                                                 rr:termType  rr:Literal
+                                               ] ;
+                                 rr:predicate  rdfs:label
+                               ] ;
+        rr:subjectMap          [ a            rr:TermMap , rr:SubjectMap ;
+                                 rr:class     eu:Member_State ;
+                                 rr:template  "http://www.semanticweb.org/european_union#COUNTRY_{country}" ;
+                                 rr:termType  rr:IRI
+                               ] .
+
+<urn:MAPID-COMMITTEE_PRES>
+        a                      rr:TriplesMap ;
+        rr:logicalTable        [ a            rr:R2RMLView ;
+                                 rr:sqlQuery  "select \"mep\", \"label\", \"firstname\", \"lastname\" from \"public\".\"meps\" join \"public\".\"committee_pres\" on \"mep\"=\"id\""
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:TermMap , rr:ObjectMap ;
+                                                 rr:template  "http://www.semanticweb.org/european_union#COMM_{label}" ;
+                                                 rr:termType  rr:IRI
+                                               ] ;
+                                 rr:predicate  eu:presides
+                               ] ;
+        rr:subjectMap          [ a            rr:SubjectMap , rr:TermMap ;
+                                 rr:template  "http://www.semanticweb.org/european_union#PERSON_{firstname}_{lastname}" ;
+                                 rr:termType  rr:IRI
+                               ] .
+
+<urn:MAPID-ROLES_1>  a         rr:TriplesMap ;
+        rr:logicalTable        [ a            rr:R2RMLView ;
+                                 rr:sqlQuery  "select *  from \"public\".\"roles\""
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:ObjectMap , rr:TermMap ;
+                                                 rr:column    "label" ;
+                                                 rr:language  "en" ;
+                                                 rr:termType  rr:Literal
+                                               ] ;
+                                 rr:predicate  rdfs:label
+                               ] ;
+        rr:subjectMap          [ a            rr:TermMap , rr:SubjectMap ;
+                                 rr:class     eu:CommissionRole ;
+                                 rr:template  "http://www.semanticweb.org/european_union#ROLE_{role}" ;
+                                 rr:termType  rr:IRI
+                               ] .
+
+<urn:MAPID-GROUP_PRES>
+        a                      rr:TriplesMap ;
+        rr:logicalTable        [ a            rr:R2RMLView ;
+                                 rr:sqlQuery  "select \"mep\", \"label\", \"firstname\", \"lastname\" from \"public\".\"meps\" join \"public\".\"group_pres\" on \"mep\"=\"id\""
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:TermMap , rr:ObjectMap ;
+                                                 rr:template  "http://www.semanticweb.org/european_union#GROUP_{label}" ;
+                                                 rr:termType  rr:IRI
+                                               ] ;
+                                 rr:predicate  eu:presides
+                               ] ;
+        rr:subjectMap          [ a            rr:TermMap , rr:SubjectMap ;
+                                 rr:template  "http://www.semanticweb.org/european_union#PERSON_{firstname}_{lastname}" ;
+                                 rr:termType  rr:IRI
+                               ] .
+
+<urn:MAPID-MEMBER_COMMITTEE>
+        a                      rr:TriplesMap ;
+        rr:logicalTable        [ a            rr:R2RMLView ;
+                                 rr:sqlQuery  "select \"firstname\", \"lastname\", \"committee\" from \"public\".\"meps\" join \"public\".\"committee\" on \"meps\".\"id\" = \"mep\""
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:TermMap , rr:ObjectMap ;
+                                                 rr:template  "http://www.semanticweb.org/european_union#COMM_{committee}" ;
+                                                 rr:termType  rr:IRI
+                                               ] ;
+                                 rr:predicate  eu:memberOfCommittee
+                               ] ;
+        rr:subjectMap          [ a            rr:SubjectMap , rr:TermMap ;
+                                 rr:template  "http://www.semanticweb.org/european_union#PERSON_{firstname}_{lastname}" ;
+                                 rr:termType  rr:IRI
+                               ] .
+
+<urn:MAPID-EU_PARTY_1>
+        a                      rr:TriplesMap ;
+        rr:logicalTable        [ a            rr:R2RMLView ;
+                                 rr:sqlQuery  "select distinct \"politicalgroup\" as party from \"public\".meps"
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:TermMap , rr:ObjectMap ;
+                                                 rr:column    "party" ;
+                                                 rr:datatype  xsd:string ;
+                                                 rr:termType  rr:Literal
+                                               ] ;
+                                 rr:predicate  rdfs:label
+                               ] ;
+        rr:subjectMap          [ a            rr:SubjectMap , rr:TermMap ;
+                                 rr:class     eu:PoliticalGroup ;
+                                 rr:template  "http://www.semanticweb.org/european_union#GROUP_{party}" ;
+                                 rr:termType  rr:IRI
+                               ] .
+
+<urn:MAPID-PROCEDURE_1>
+        a                      rr:TriplesMap ;
+        rr:logicalTable        [ a            rr:R2RMLView ;
+                                 rr:sqlQuery  "select * from \"public\".\"procedure\""
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:ObjectMap , rr:TermMap ;
+                                                 rr:column    "id" ;
+                                                 rr:datatype  xsd:string ;
+                                                 rr:termType  rr:Literal
+                                               ] ;
+                                 rr:predicate  <http://purl.org/dc/elements/1.1/identifier>
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:TermMap , rr:ObjectMap ;
+                                                 rr:column    "status" ;
+                                                 rr:datatype  xsd:string ;
+                                                 rr:termType  rr:Literal
+                                               ] ;
+                                 rr:predicate  eu:status
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:TermMap , rr:ObjectMap ;
+                                                 rr:column    "title" ;
+                                                 rr:language  "en" ;
+                                                 rr:termType  rr:Literal
+                                               ] ;
+                                 rr:predicate  <http://purl.org/dc/elements/1.1/title>
+                               ] ;
+        rr:subjectMap          [ a            rr:SubjectMap , rr:TermMap ;
+                                 rr:class     eu:Procedure ;
+                                 rr:template  "http://www.semanticweb.org/european_union#PROC_{id}" ;
+                                 rr:termType  rr:IRI
+                               ] .
+
+<urn:MAPID-DOCUMENT_1>
+        a                      rr:TriplesMap ;
+        rr:logicalTable        [ a            rr:R2RMLView ;
+                                 rr:sqlQuery  "select * from \"public\".\"document\""
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:TermMap , rr:ObjectMap ;
+                                                 rr:column    "data" ;
+                                                 rr:termType  rr:Literal
+                                               ] ;
+                                 rr:predicate  <http://purl.org/dc/elements/1.1/date>
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:TermMap , rr:ObjectMap ;
+                                                 rr:template  "http://www.semanticweb.org/european_union#PERSON_{author}" ;
+                                                 rr:termType  rr:IRI
+                                               ] ;
+                                 rr:predicate  <http://purl.org/dc/terms/creator>
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:TermMap , rr:ObjectMap ;
+                                                 rr:column    "url" ;
+                                                 rr:datatype  xsd:string ;
+                                                 rr:termType  rr:Literal
+                                               ] ;
+                                 rr:predicate  eu:documentUrl
+                               ] ;
+        rr:predicateObjectMap  [ a             rr:PredicateObjectMap ;
+                                 rr:objectMap  [ a            rr:TermMap , rr:ObjectMap ;
+                                                 rr:column    "status" ;
+                                                 rr:datatype  xsd:string ;
+                                                 rr:termType  rr:Literal
+                                               ] ;
+                                 rr:predicate  eu:status
+                               ] ;
+        rr:subjectMap          [ a            rr:TermMap , rr:SubjectMap ;
+                                 rr:class     eu:Document ;
+                                 rr:template  "http://www.semanticweb.org/european_union#DOC_{id}" ;
+                                 rr:termType  rr:IRI
+                               ] .

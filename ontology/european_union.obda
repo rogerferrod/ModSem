@@ -1,0 +1,78 @@
+[PrefixDeclaration]
+:		http://www.semanticweb.org/european_union#
+eu:		http://www.semanticweb.org/european_union#
+owl:		http://www.w3.org/2002/07/owl#
+rdf:		http://www.w3.org/1999/02/22-rdf-syntax-ns#
+xml:		http://www.w3.org/XML/1998/namespace
+xsd:		http://www.w3.org/2001/XMLSchema#
+obda:		https://w3id.org/obda/vocabulary#
+rdfs:		http://www.w3.org/2000/01/rdf-schema#
+skos:		http://www.w3.org/2004/02/skos/core#
+vann:		http://purl.org/vocab/vann/
+
+[MappingDeclaration] @collection [[
+mappingId	MAPID-NATIONAL_PARTY
+target		:PARTY_{party} a :NationalPoliticalParty ; rdfs:label {party}^^xsd:string ; :nationalPartyOf :COUNTRY_{country} . 
+source		select distinct "nationalparty" as party, "country" from "public".meps
+
+mappingId	MAPID-EU_PARTY
+target		:GROUP_{party} a :PoliticalGroup ; rdfs:label {party}^^xsd:string . 
+source		select distinct "politicalgroup" as party from "public".meps
+
+mappingId	MAPID-PARTY_AFFILIATION
+target		:PARTY_{nationalparty} :affiliatedToEuropeanParty :GROUP_{politicalgroup} . 
+source		select distinct "nationalparty", "politicalgroup" from "public".meps
+
+mappingId	MAPID-COUNTRY
+target		:COUNTRY_{country} a :Member_State ; rdfs:label {country}@en . 
+source		select distinct "country" from "public".meps
+
+mappingId	MAPID-MEP
+target		:PERSON_{firstname}_{lastname} a :MemberEuropeanParliament ; <http://xmlns.com/foaf/0.1/name> {firstname}^^xsd:string ; <http://xmlns.com/foaf/0.1/surname> {lastname}^^xsd:string ; :photo {urlphoto}^^xsd:string ; :homepage {urlhomepage}^^xsd:string ; :cameFrom :COUNTRY_{country} ; :belongsToNationalParty :PARTY_{nationalparty} ; :belongsToGroup :GROUP_{politicalgroup} ; :parliamentaryRole {parliamentary_role}^^xsd:string . 
+source		select * from "public".meps
+
+mappingId	MAPID-COMMITTEE
+target		:COMM_{committee} a :PermanentCommittee ; rdfs:label {label}@en ; skos:altLabel {committee}^^xsd:string . 
+source		select distinct "committee", "label" from "public"."committee"
+
+mappingId	MAPID-MEMBER_COMMITTEE
+target		:PERSON_{firstname}_{lastname} :memberOfCommittee :COMM_{committee} . 
+source		select "firstname", "lastname", "committee" from "public"."meps" join "public"."committee" on "meps"."id" = "mep"
+
+mappingId	MAPID-COMMISSIONER
+target		:PERSON_{firstname}_{lastname} a :Commissioner ; <http://xmlns.com/foaf/0.1/name> {firstname}^^xsd:string ; <http://xmlns.com/foaf/0.1/surname> {lastname}^^xsd:string ; :portfolio {portfolio}^^xsd:string ; :homepage {homepage}^^xsd:string ; :cameFrom :COUNTRY_{country} . 
+source		select * from "public"."commission"
+
+mappingId	MAPID-ROLES
+target		:ROLE_{role} a :CommissionRole ; rdfs:label {label}@en . 
+source		select *  from "public"."roles"
+
+mappingId	MAPID-COMMISSIONER_ROLES
+target		:PERSON_{firstname}_{lastname} :hasCommissionRole :ROLE_{role} . 
+source		select "firstname", "lastname", "role" from "public"."commission" join "public"."roles" on "lastname" = "commissioner"
+
+mappingId	MAPID-COUNCIL
+target		:PERSON_{firstname}_{lastname} a :NationalPrimeMinister ; :cameFrom :COUNTRY_{country} ; :belongsToNationalParty :PARTY_{party} ; owl:sameAs {dbpedia}^^xsd:string ; :headOfState :COUNTRY_{country} . 
+source		select * from "public"."council"
+
+mappingId	MAPID-PROCEDURE
+target		:PROC_{id} a :Procedure ; <http://purl.org/dc/elements/1.1/identifier> {id}^^xsd:string ; :status {status}^^xsd:string ; <http://purl.org/dc/elements/1.1/title> {title}@en . 
+source		select * from "public"."procedure"
+
+mappingId	MAPID-DOCUMENT
+target		:DOC_{id} a :Document ; :status {status}^^xsd:string ; :documentUrl {url}^^xsd:string ; <http://purl.org/dc/terms/creator> :PERSON_{author} ; <http://purl.org/dc/elements/1.1/date> {data} . 
+source		select * from "public"."document"
+
+mappingId	MAPID-PROCEDURE_DOCUMENT
+target		:PROC_{procedure} :hasDocument :DOC_{id} . 
+source		select "id", "procedure" from "public"."document"
+
+mappingId	MAPID-GROUP_PRES
+target		:PERSON_{firstname}_{lastname} :presides :GROUP_{label} . 
+source		select "mep", "label", "firstname", "lastname" from "public"."meps" join "public"."group_pres" on "mep"="id"
+
+mappingId	MAPID-COMMITTEE_PRES
+target		:PERSON_{firstname}_{lastname} :presides :COMM_{label} . 
+source		select "mep", "label", "firstname", "lastname" from "public"."meps" join "public"."committee_pres" on "mep"="id"
+]]
+
